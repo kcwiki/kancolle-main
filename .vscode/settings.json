@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.rulers": [150],
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "javascript.referencesCodeLens.enabled": true,
+  "prettier.eslintIntegration": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.exclude": "**/node_modules/**/*",
+  "tslint.ignoreDefinitionFiles": false,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.reportStyleChecksAsWarnings": false
+}

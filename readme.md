@@ -15,7 +15,7 @@ console.log(main.fn('SuffixUtil').create(156, 'ship_card'))
 // 6982
 ```
 
-See [`dist/api`](dist/api) for more functions (many will not work).
+See [`dist/api`](https://github.com/gakada/kcmain/blob/master/dist/api) for more functions (many will not work).
 
 To start `PIXI` rendering:
 
@@ -55,14 +55,14 @@ hook(1000, scene => {
 
 ## Build
 
-To build files in [`dist`](dist):
+To build files in [`dist`](https://github.com/gakada/kcmain/tree/master/dist):
 
 ```sh
 $ yarn
 $ yarn build
 ```
 
-[`dist/main.js`](dist/main.js) is the final patched file.
+[`dist/main.js`](https://raw.githubusercontent.com/gakada/kcmain/master/dist/main.js) is the final patched file.
 
 ## Todo
 

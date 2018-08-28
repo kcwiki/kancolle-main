@@ -1,7 +1,7 @@
 {
   "name": "@kancolle/main",
   "description": "Using KanColle's main.js in Node.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mainVersion": "4.0.2.5",
   "main": "dist/main.js",
   "repository": "gakada/kcmain",

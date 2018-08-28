@@ -16,7 +16,7 @@
   "scripts": {
     "lint": "eslint . --ext .js --fix",
     "build": "rimraf dist && mkdir -p dist && node build.js && node build-api.js",
-    "test": "yarn lint && tape test.js"
+    "test": "yarn build && yarn lint && tape test.js"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

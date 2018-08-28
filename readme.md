@@ -1,5 +1,10 @@
 Using KanColle's `main.js` in Node.js.
 
+![npm (scoped)](https://img.shields.io/npm/v/@kancolle/main.svg)
+￼![Travis (.org)](https://img.shields.io/travis/gakada/kcmain.svg)
+![David](https://img.shields.io/david/gakada/kcmain.svg)
+![David](https://img.shields.io/david/dev/gakada/kcmain.svg)
+
 ## Install
 
 ```sh

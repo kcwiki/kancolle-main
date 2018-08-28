@@ -5,6 +5,12 @@ const beautify = require('js-beautify').js
 const { mainVersion, version } = require('./package.json')
 
 const main = async () => {
+  const [, scriptVesion] = (await get('http://203.104.209.7/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*=\s*["'](.+)["']/)
+  if (mainVersion !== scriptVesion) {
+    console.log(`update ${mainVersion} -> ${scriptVesion}`)
+  }
+  writeFileSync(`${__dirname}/dist/version`, scriptVesion)
+
   const main = (await get('http://203.104.209.23/kcs2/js/main.js')).data
   const mainFormatted = beautify(main, { indent_size: 2 })
   const mainPatched = mainFormatted
@@ -30,7 +36,7 @@ const registerModules = e => {
   return e
 }
 /**
- * main.js patched with defineModule and registerModules, version ${version} (${mainVersion})
+ * main.js patched with defineModule and registerModules, version ${version} (${scriptVesion})
  *
  * Licence unknown, available at http://203.104.209.23/kcs2/js/main.js
  */

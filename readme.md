@@ -72,4 +72,3 @@ $ yarn build
 ## Todo
 
 - After `main.init()` a request to `version.json` will be performed with `axios`, that won't work due to browser security related issues, more browser simulation is required. Similarly, many functions won't work without `api_start2` response. For example, `main.fn('ShipLoader').getPath` need versions from `api_start2`.
-- `main.js` version in build script.

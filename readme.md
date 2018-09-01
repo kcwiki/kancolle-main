@@ -1,9 +1,9 @@
 Using KanColle's `main.js` in Node.js.
 
 ![npm (scoped)](https://img.shields.io/npm/v/@kancolle/main.svg)
-￼![Travis (.org)](https://img.shields.io/travis/gakada/kcmain.svg)
-![David](https://img.shields.io/david/gakada/kcmain.svg)
-![David](https://img.shields.io/david/dev/gakada/kcmain.svg)
+![Travis (.org)](https://img.shields.io/travis/kcwiki/kancolle-main.svg)
+![David](https://img.shields.io/david/kcwiki/kancolle-main.svg)
+![David](https://img.shields.io/david/dev/kcwiki/kancolle-main.svg)
 
 ## Install
 
@@ -20,7 +20,7 @@ console.log(main.fn('SuffixUtil').create(156, 'ship_card'))
 // 6982
 ```
 
-See [`dist/api`](https://github.com/gakada/kcmain/blob/master/dist/api) for more functions (many will not work).
+See [`dist/api`](https://github.com/kcwiki/kancolle-main/blob/master/dist/api) for more functions (many will not work).
 
 To start `PIXI` rendering:
 
@@ -60,14 +60,14 @@ hook(1000, scene => {
 
 ## Build
 
-To build files in [`dist`](https://github.com/gakada/kcmain/tree/master/dist):
+To build files in [`dist`](https://github.com/kcwiki/kancolle-main/tree/master/dist):
 
 ```sh
 $ yarn
 $ yarn build
 ```
 
-[`dist/main.js`](https://raw.githubusercontent.com/gakada/kcmain/master/dist/main.js) is the final patched file.
+[`dist/main.js`](https://raw.githubusercontent.com/kcwiki/kancolle-main/master/dist/main.js) is the final patched file.
 
 ## Todo
 

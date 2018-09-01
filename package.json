@@ -1,10 +1,10 @@
 {
   "name": "@kancolle/main",
   "description": "Using KanColle's main.js in Node.js",
-  "version": "1.0.1",
-  "mainVersion": "4.0.2.5",
+  "version": "1.0.2",
+  "mainVersion": "4.0.2.6",
   "main": "dist/main.js",
-  "repository": "gakada/kcmain",
+  "repository": "kcwiki/kancolle-main",
   "license": "MIT",
   "files": [
     "dist/createjs.js",

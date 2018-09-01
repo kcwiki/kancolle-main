@@ -8,4 +8,4 @@ export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git checkout master
 git add .
 git commit -m "chore: autobuild for $(cat dist/version)"
-git push "https://${GITHUB_TOKEN}@github.com/gakada/kcmain.git" master
+git push "https://${GITHUB_TOKEN}@github.com/kcwiki/kancolle-main.git" master

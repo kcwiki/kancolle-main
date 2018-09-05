@@ -43,6 +43,7 @@ const registerModules = e => {
 ${mainPatched}
 `
   writeFileSync(`${__dirname}/dist/main.js`, build)
+  console.log('wrote dist/main.js')
 }
 
 try {

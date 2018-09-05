@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js --fix",
-    "build": "rimraf dist && mkdir -p dist && node build.js && node build-api.js",
+    "build": "rimraf dist && mkdir -p dist && node build.js && sleep 1 && node build-api.js",
     "test": "yarn build && yarn lint && tape test.js"
   },
   "devDependencies": {

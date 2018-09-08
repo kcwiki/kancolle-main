@@ -11,7 +11,7 @@ const main = async () => {
   }
   writeFileSync(`${__dirname}/dist/version`, scriptVesion)
 
-  const main = (await get('http://203.104.209.23/kcs2/js/main.js')).data
+  const main = (await get('http://203.104.209.71/kcs2/js/main.js')).data
   const mainFormatted = beautify(main, { indent_size: 2 })
   const mainPatched = mainFormatted
     .replace(/Object\.defineProperty\(e, "__esModule"/g, 'defineModule(e);Object.defineProperty(e, "__esModule"')

@@ -2,7 +2,7 @@ const { readFileSync, writeFileSync } = require('fs-extra')
 const { get } = require('axios')
 const beautify = require('js-beautify').js
 
-const { mainVersion, version } = require('./package.json')
+const { mainVersion } = require('./package.json')
 
 const main = async () => {
   const [, scriptVesion] = (await get('http://203.104.209.7/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*=\s*["'](.+)["']/)
@@ -36,7 +36,7 @@ const registerModules = e => {
   return e
 }
 /**
- * main.js patched with defineModule and registerModules, version ${version} (${scriptVesion})
+ * main.js ${scriptVesion} patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.23/kcs2/js/main.js
  */

@@ -146,7 +146,8 @@
           '271': { r: -15, sx: -1 },
           '302': { r: 5 },
           '304': { r: 8 },
-          '305': { r: 10, sx: -1 } } },
+          '305': { r: 10, sx: -1 },
+          '306': { y: -5, r: 10, sx: -1 } } },
     ITEMUP_REPLACE:
      { '516': 516,
        '517': 517,
@@ -195,7 +196,8 @@
        '583': 583,
        '584': 7,
        '585': 161,
-       '586': 574 },
+       '586': 574,
+       '587': 298 },
     MapConst: { [Function: t] getMapBGMID: [Function] },
     RANK_NAME:
      [ '', '元帥', '大将', '中将', '少将', '大佐', '中佐', '新米中佐', '少佐', '中堅少佐', '新米少佐' ],
@@ -325,7 +327,8 @@
           '271': { r: -15, sx: -1 },
           '302': { r: 5 },
           '304': { r: 8 },
-          '305': { r: 10, sx: -1 } } } },
+          '305': { r: 10, sx: -1 },
+          '306': { y: -5, r: 10, sx: -1 } } } },
   { ITEMUP_REPLACE:
      { '516': 516,
        '517': 517,
@@ -374,7 +377,8 @@
        '583': 583,
        '584': 7,
        '585': 161,
-       '586': 574 } },
+       '586': 574,
+       '587': 298 } },
   { MapConst: { [Function: t] getMapBGMID: [Function] } },
   { BGMMstModelHolder: [Function: t],
     BGMMstModelHolderEdit: [Function: e] },
@@ -589,7 +593,8 @@
      { [Function: t] getPath: [Function], getVersionQuery: [Function] } },
   { SuffixUtil: { createKey: [Function: e], create: [Function: i] } },
   { VersionUtil: { get: [Function: e], getResourceVersion: [Function: i] } },
-  { ShipLoader: { [Function: t] getPath: [Function] } },
+  { ShipLoader:
+     { [Function: t] hSuffix: [Function], getPath: [Function], hasai: null } },
   { SlotLoader: { [Function: t] getPath: [Function] } },
   { UIImageLoader:
      { [Function: t]

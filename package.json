@@ -1,8 +1,8 @@
 {
   "name": "@kancolle/main",
   "description": "Using KanColle's main.js in Node.js",
-  "version": "1.0.3",
-  "mainVersion": "4.1.0.0",
+  "version": "1.0.4",
+  "mainVersion": "4.1.1.0",
   "main": "dist/main.js",
   "repository": "kcwiki/kancolle-main",
   "license": "MIT",
@@ -15,26 +15,26 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js --fix",
-    "build": "rimraf dist && mkdir -p dist && node build.js && sleep 1 && node build-api.js",
+    "build": "rimraf dist && node build.js",
     "test": "yarn build && yarn lint && tape test.js"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
-    "eslint": "^5.4.0",
+    "eslint": "^5.5.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "fs-extra": "^7.0.0",
-    "js-beautify": "^1.8.1",
+    "js-beautify": "^1.8.6",
     "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
     "tape": "^4.9.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "canvas": "^1.6.11",
+    "canvas": "^1.6.12",
     "createjs": "^1.0.1",
     "jsdom": "^12.0.0",
     "jsdom-global": "^3.0.2",
-    "pixi.js": "^4.8.1"
+    "pixi.js": "^4.8.2"
   }
 }

@@ -1,4 +1,5 @@
-const { readFileSync, writeFileSync } = require('fs-extra')
+const { inspect } = require('util')
+const { readFileSync, outputFileSync } = require('fs-extra')
 const { get } = require('axios')
 const beautify = require('js-beautify').js
 
@@ -9,17 +10,18 @@ const main = async () => {
   if (mainVersion !== scriptVesion) {
     console.log(`update ${mainVersion} -> ${scriptVesion}`)
   }
-  writeFileSync(`${__dirname}/dist/version`, scriptVesion)
+  outputFileSync(`${__dirname}/dist/version`, scriptVesion)
 
-  const main = (await get('http://203.104.209.71/kcs2/js/main.js')).data
-  const mainFormatted = beautify(main, { indent_size: 2 })
+  const mainSource = (await get('http://203.104.209.71/kcs2/js/main.js')).data
+  console.log(`fetched main.js`)
+  const mainFormatted = beautify(mainSource, { indent_size: 2 })
   const mainPatched = mainFormatted
     .replace(/Object\.defineProperty\(e, "__esModule"/g, 'defineModule(e);Object.defineProperty(e, "__esModule"')
     .replace('module.exports = e()', 'module.exports = registerModules(e())')
 
   const createjs = readFileSync(`${__dirname}/node_modules/createjs/builds/1.0.0/createjs.js`).toString()
   const createjsPatched = createjs.replace('this.createjs = this.createjs||{}', 'const createjs = {}; module.exports = createjs;')
-  writeFileSync(`${__dirname}/dist/createjs.js`, createjsPatched)
+  outputFileSync(`${__dirname}/dist/createjs.js`, createjsPatched)
 
   const build = `const axios = require('axios')
 require('jsdom-global')()
@@ -42,8 +44,15 @@ const registerModules = e => {
  */
 ${mainPatched}
 `
-  writeFileSync(`${__dirname}/dist/main.js`, build)
+  outputFileSync(`${__dirname}/dist/main.js`, build)
   console.log('wrote dist/main.js')
+
+  const main = require('./dist/main')
+
+  const api = inspect(main.modules, { maxArrayLength: 10000, depth: 10 }).replace(/\n\s+START_TIME: \d+,\n/g, '\n')
+
+  outputFileSync(`${__dirname}/dist/api`, api)
+  console.log('wrote dist/api')
 }
 
 try {

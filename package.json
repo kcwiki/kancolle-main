@@ -1,8 +1,8 @@
 {
   "name": "@kancolle/main",
   "description": "Using KanColle's main.js in Node.js",
-  "version": "1.0.11",
-  "mainVersion": "4.2.4.3",
+  "version": "1.0.12",
+  "mainVersion": "4.3.0.0",
   "main": "dist/main.js",
   "repository": "kcwiki/kancolle-main",
   "license": "MIT",

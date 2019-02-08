@@ -203,10 +203,10 @@
     RANK_NAME:
      [ '', '元帥', '大将', '中将', '少将', '大佐', '中佐', '新米中佐', '少佐', '中堅少佐', '新米少佐' ],
     PORT_API_SEED:
-     [ 7309, 7396, 3023, 8342, 9125, 3860, 7366, 4909, 2925, 6561 ],
+     [ 6521, 9136, 4344, 3668, 2383, 9710, 3612, 5049, 8911, 2735 ],
     COMBINABLE: false,
     EVENT_AREA_ID: -1,
-    MAMIYA_IRAKO_SEASON: 0,
+    MAMIYA_IRAKO_SEASON: 1,
     HTML5_AUDIO: false },
   { BannerSize: { [Function: t] W: 240, H: 60 } },
   { SlotConst:
@@ -1109,7 +1109,11 @@
   { SupplyUtil:
      { CalcRequireMaterials: [Function: e],
        CheckRequireSupplyDeck: [Function: i],
-       CheckRequireSupplyShip: [Function: o] } },
+       CheckRequireSupplyDeckAll: [Function: o],
+       CheckRequireSupplyDeckBaux: [Function: r],
+       CheckRequireSupplyShip: [Function: s],
+       CheckRequireSupplyShipAll: [Function: a],
+       CheckRequireSupplyShipBaux: [Function: _] } },
   { ViewMode: { '0': 'DECK', '1': 'OTHER', DECK: 0, OTHER: 1 } },
   { PreInitializeTask: [Function: e] },
   { FinalizeTask: [Function: e] },
@@ -1134,6 +1138,8 @@
   { Material: [Function: e], SupplyMaterial: [Function: e] },
   { SupplyFloor: [Function: e] },
   { SupplyTypeSelectButton: [Function: e] },
+  { SupplyAircraftButton: [Function: e] },
+  { SupplyAllButton2: [Function: e] },
   { RemodelScene: [Function: e] },
   { PreInitializeTask: [Function: e] },
   { TaskLoadResourcesRemodel: [Function: e] },

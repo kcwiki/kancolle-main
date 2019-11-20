@@ -2179,7 +2179,7 @@
   { DutyDataHolder: [Function: t] },
   { DutyEndModel: [Function: t] },
   { DutyModel: [Function: t] },
-  { POSTER_GIRL: 'sanma',
+  { POSTER_GIRL: '',
     POSTER_KEY_1: 'duty_poster_1',
     POSTER_KEY_2: 'duty_poster_2',
     BUTAI_SAIHENSEI: [ 626, 629, 630, 659, 660 ] },

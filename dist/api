@@ -245,7 +245,7 @@
      [ 8237, 2560, 8691, 2496, 5544, 7982, 5467, 5496, 6127, 8543 ],
     COMBINABLE: true,
     EVENT_AREA_ID: 46,
-    MAMIYA_IRAKO_SEASON: 0,
+    MAMIYA_IRAKO_SEASON: 2,
     HTML5_AUDIO: false },
   { BannerSize: { [Function: t] W: 240, H: 60 } },
   { SlotConst:

@@ -44,7 +44,7 @@ const registerModules = e => {
  */
 ${mainPatched}
 `
-  outputFileSync(`${__dirname}/dist/main.js`, build)
+  outputFileSync(`${__dirname}/dist/main.js`, build.replace(/\\u([\d\w]{4})/gi, (_, e) => String.fromCharCode(parseInt(e, 16))))
   console.log('wrote dist/main.js')
 
   const main = require('./dist/main')

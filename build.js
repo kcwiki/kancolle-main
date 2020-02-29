@@ -6,7 +6,9 @@ const beautify = require('js-beautify').js
 const { mainVersion } = require('./package.json')
 
 const main = async () => {
-  const [, scriptVesion] = (await get('http://203.104.209.7/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*=\s*["'](.+)["']/)
+  const [, scriptVesion] = (await get(
+    `${process.env.GADGET_PROXY ? `${process.env.GADGET_PROXY}/` : ''}http://203.104.209.7/gadget_html5/js/kcs_const.js`
+  )).data.match(/scriptVesion\s*=\s*["'](.+)["']/)
   if (mainVersion !== scriptVesion) {
     console.log(`update ${mainVersion} -> ${scriptVesion}`)
   }

@@ -1,7 +1,23 @@
+sudo: false
+
 language: node_js
+
 node_js:
   - '11'
-cache: yarn
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+script:
+  - yarn test
+
+after_success:
+  - sh src/push.sh
+
+env:
+  - CXX=g++-4.9
 
 addons:
   apt:
@@ -14,9 +30,3 @@ addons:
       - libgif-dev
       - librsvg2-dev
       - g++-4.9
-env:
-  - CXX=g++-4.9
-sudo: false
-
-after_success:
-  - sh .travis/push.sh

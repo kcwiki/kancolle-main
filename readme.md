@@ -1,3 +1,5 @@
+# `@kancolle/main`
+
 Using KanColle's `main.js` in Node.js.
 
 [![npm package](https://img.shields.io/npm/v/@kancolle/main.svg)](https://www.npmjs.org/package/@kancolle/main)
@@ -8,7 +10,7 @@ Using KanColle's `main.js` in Node.js.
 ## Install
 
 ```sh
-$ yarn add @kancolle/main
+yarn add @kancolle/main
 ```
 
 ## Usage
@@ -63,8 +65,10 @@ hook(1000, scene => {
 To build files in [`dist`](https://github.com/kcwiki/kancolle-main/tree/master/dist):
 
 ```sh
-$ yarn
-$ yarn build
+yarn
+yarn build
+# or
+GADGET_PROXY=http://... yarn build
 ```
 
 [`dist/main.js`](https://raw.githubusercontent.com/kcwiki/kancolle-main/master/dist/main.js) is the final patched file.

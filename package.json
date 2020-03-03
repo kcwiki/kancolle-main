@@ -1,40 +1,63 @@
 {
   "name": "@kancolle/main",
-  "description": "Using KanColle's main.js in Node.js",
   "version": "1.0.15",
-  "mainVersion": "4.3.5.0",
-  "main": "dist/main.js",
-  "repository": "kcwiki/kancolle-main",
+  "description": "Using KanColle's main.js in Node.js",
+  "keywords": [
+    "kancolle"
+  ],
   "license": "MIT",
+  "author": "gakada (https://github.com/gakada)",
+  "contributors": [],
+  "homepage": "https://github.com/kcwiki/kancolle-main#readme",
+  "bugs": "https://github.com/kcwiki/kancolle-main/issues",
+  "repository": "kcwiki/kancolle-main",
+  "main": "dist/main.js",
   "files": [
     "dist/createjs.js",
     "dist/main.js"
   ],
-  "keywords": [
-    "kancolle"
-  ],
   "scripts": {
-    "lint": "eslint . --ext .js --fix",
-    "build": "rimraf dist && node build.js",
-    "test": "yarn build && yarn lint && tape test.js"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.11.0",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-prettier": "^3.0.0",
-    "fs-extra": "^7.0.0",
-    "js-beautify": "^1.8.9",
-    "prettier": "^1.15.3",
-    "rimraf": "^2.6.2",
-    "tape": "^4.9.1"
+    "format": "prettier --loglevel warn --write 'src/*.{js,json,md,ts,yaml,yml}'",
+    "lint": "eslint --fix src",
+    "build": "rimraf dist && node src/build.js",
+    "test": "yarn format && yarn lint && yarn build && tape src/test.js",
+    "up": "yarn upgrade --latest"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "canvas": "^2.2.0",
+    "axios": "^0.19.2",
+    "canvas": "^2.6.1",
     "createjs": "^1.0.1",
-    "jsdom": "^13.1.0",
+    "jsdom": "^16.2.0",
     "jsdom-global": "^3.0.2",
-    "pixi.js": "^4.8.4"
+    "pixi.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "fs-extra": "^8.1.0",
+    "js-beautify": "^1.10.3",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "tape": "^4.13.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "babel-eslint"
+  },
+  "prettier": {
+    "printWidth": 150,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

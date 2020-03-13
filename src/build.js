@@ -1,4 +1,4 @@
-const { execSync } = require('child_process')
+const { spawnSync } = require('child_process')
 // const { inspect } = require('util')
 const { get } = require('axios')
 const { readFileSync, outputFileSync } = require('fs-extra')
@@ -23,7 +23,11 @@ outputFileSync('dist/createjs.js', createjsPatched)
   outputFileSync('dist/decode.js', `${mainDecoder}\n${decoderSource}`)
   outputFileSync('dist/main.js', `! function${mainFormatted}`)
 
-  execSync('node dist/decode.js')
+  const decoderFunction = readFileSync('dist/decode.js')
+    .toString()
+    .match(/\nvar (.+?) = function/)[1]
+
+  console.log(spawnSync('node', ['dist/decode.js', decoderFunction]).stdout.toString())
 
   const mainDecoded = readFileSync('dist/main.js').toString()
   const mainPatched = mainDecoded

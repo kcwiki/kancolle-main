@@ -19,5 +19,6 @@ writeFileSync(
     .replace(/\]\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '].$1')
     .replace(/([_a-zA-Z][_a-zA-Z0-9]*?)\['\$_\$'\]\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '$1[$_$].$2')
     .replace(/([_a-zA-Z][_a-zA-Z0-9]*?)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '$1.$2')
-    .replace(/\\u([\d\w]{4})/gi, (_, e) => String.fromCharCode(parseInt(e, 16))),
+    .replace(/\\u([\d\w]{4})/gi, (_, e) => String.fromCharCode(parseInt(e, 16)))
+    .replace("`'symbol'`", '`symbol`'),
 )

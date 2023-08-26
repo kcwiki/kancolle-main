@@ -3,8 +3,6 @@
 Using KanColle's `main.js` in Node.js.
 
 [![npm package](https://img.shields.io/npm/v/@kancolle/main.svg)](https://www.npmjs.org/package/@kancolle/main)
-[![dependencies](https://img.shields.io/david/kcwiki/kancolle-main.svg)](https://david-dm.org/kcwiki/kancolle-main)
-[![devDependencies](https://img.shields.io/david/dev/kcwiki/kancolle-main.svg)](https://david-dm.org/kcwiki/kancolle-main?type=dev)
 
 ## Install
 
@@ -21,8 +19,14 @@ See [`src/test.js`](https://github.com/kcwiki/kancolle-main/blob/master/src/test
 To build files in [`dist`](https://github.com/kcwiki/kancolle-main/tree/master/dist):
 
 ```sh
+# tested with node v20, e.g.
+nvm install 20
+nvm use 20
+# disable ignore-scripts for the following command (to build canvas)
 yarn
+# this will build dist/main.js, using js-beautify, as it generates shorter file than prettier
 yarn build
+# this will try loading dist/main.js and running src/test.js on it
 yarn test
 ```
 

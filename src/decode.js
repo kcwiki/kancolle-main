@@ -1,8 +1,8 @@
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync, outputFileSync } = require('fs-extra')
 
+const debug = process.env.DEBUG
 const decoderFunction = process.argv[2]
-const debug = process.argv[3] === '-d'
-const passes = process.argv[4] || 5
+const passes = +process.argv[3] || 5
 
 let main = readFileSync('dist/main.js').toString()
 
@@ -19,7 +19,7 @@ for (let pass = 1; pass <= passes; ++pass) {
     main = main.replace(new RegExp(`var ([_a-zA-Z][_a-zA-Z0-9]*?) = (?:${decoderFunctions.join('|')})([;,])`, 'g'), `var $1 = ${decoderFunction}$2`)
   }
   if (debug) {
-    writeFileSync(`dist/main${pass}.js`, main)
+    outputFileSync(`debug/main${pass}.js`, main)
   }
 }
 
@@ -28,7 +28,7 @@ for (let pass = 1; pass <= passes; ++pass) {
 const vars = {}
 let i = 0
 
-writeFileSync(
+outputFileSync(
   'dist/main.js',
   main
     .replace(/([_a-zA-Z][_a-zA-Z0-9]*?)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '$1.$2')

@@ -17,7 +17,7 @@
     "dist/main.js"
   ],
   "scripts": {
-    "format": "prettier --loglevel warn --write 'src/*.{js,json,md,ts,yaml,yml}'",
+    "format": "prettier --log-level warn --write 'src/*.{js,json,md,ts,yaml,yml}'",
     "lint": "eslint --fix src",
     "build": "node src/build.js",
     "test": "yarn format && yarn lint && yarn build && node src/test.js",

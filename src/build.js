@@ -57,7 +57,7 @@ const getParts = main => {
   const main =
     debug && existsSync('debug/main0.js')
       ? readFileSync('debug/main0.js').toString()
-      : beautify((await get('http://203.104.209.71/kcs2/js/main.js')).data, { indent_size: 2 })
+      : beautify((await get('https://w01y.kancolle-server.com/kcs2/js/main.js')).data, { indent_size: 2 }).replace('}(function(', '}\n(function(')
 
   const { mainDecoder, mainFormatted, decoderFunction } = getParts(main)
 
@@ -75,7 +75,7 @@ const getParts = main => {
 
   removeSync('dist/decode.js')
 
-  const version = (await get('https://kcwiki.github.io/cache/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*?=\s*?["'](.+?)["']/)[1]
+  const version = (await get('https://w00g.kancolle-server.com/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*?=\s*?["'](.+?)["']/)[1]
   outputFileSync('dist/version', version)
 
   const mainPatched = file('dist/main.js')
